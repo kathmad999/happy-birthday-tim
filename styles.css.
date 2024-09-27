@@ -1,4 +1,4 @@
-/* Body styles */
+/* General body and container styles */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -10,21 +10,19 @@ body {
     overflow: hidden;
 }
 
-/* Container styles */
 .container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
-/* Blinking effect for the message */
+/* Blinking effect for the birthday message */
 #birthdayMessage {
     font-size: 1.5rem;
     color: #ff007f;
-    margin-bottom: 30px;
     animation: blink 1s infinite alternate;
 }
 
@@ -38,7 +36,6 @@ button {
     cursor: pointer;
     font-size: 1.2rem;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -55,7 +52,7 @@ button:hover {
     }
 }
 
-/* Balloon styles */
+/* Balloon container */
 .balloon-container {
     position: absolute;
     top: 0;
@@ -72,10 +69,10 @@ button:hover {
     height: 80px;
     background-color: red;
     border-radius: 50%;
-    animation: rise 10s infinite ease-in;
+    animation: rise 10s infinite ease-in-out;
 }
 
-/* Balloon rise animation */
+/* Rising balloons animation */
 @keyframes rise {
     from {
         transform: translateY(100%);
@@ -85,7 +82,7 @@ button:hover {
     }
 }
 
-/* Add multiple balloon colors */
+/* Alternating balloon colors */
 .balloon:nth-child(odd) {
     background-color: #ffa500;
 }
