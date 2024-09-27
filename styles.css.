@@ -1,4 +1,4 @@
-/* Body: Center all content vertically and horizontally */
+/* Body: Full-screen gradient background */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -12,95 +12,54 @@ body {
     overflow: hidden;
 }
 
-/* Container: Center everything and add padding */
-.container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 800px;
-}
-
-/* Animated Gradient Background */
+/* Gradient animation for background */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Dancing animation for the birthday message */
+/* Card Design: This is the birthday card layout */
+.card {
+    background-color: white;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    border: 5px solid #ff69b4; /* Pink border for decoration */
+}
+
+/* Header for the birthday message */
 #birthdayMessage {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #ff007f;
     margin-bottom: 20px;
-    animation: dance 1.5s infinite ease-in-out;
+    font-weight: bold;
 }
 
 /* Beautiful longer birthday wish text */
 #birthdayWish {
     font-size: 1.5rem;
-    color: #333;
+    color: #555;
     line-height: 1.8;
     margin-bottom: 20px;
-    text-align: center;
+    padding: 10px 20px;
+    background-color: #fdf7ff; /* Subtle background for text */
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Pulse effect for emojis */
+/* Dancing Emoji inside the card */
 #dancingEmoji {
     font-size: 3rem;
-    animation: pulse 1.5s infinite;
     margin-top: 20px;
+    animation: pulse 1.5s infinite;
 }
 
-/* Keyframe animation for dancing effect */
-@keyframes dance {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(10deg); }
-    50% { transform: rotate(-10deg); }
-    75% { transform: rotate(10deg); }
-}
-
-/* Keyframe animation for pulsing effect */
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
-/* Balloon container */
-.balloon-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-/* Balloons: Create floating balloons with random speeds and colors */
-.balloon {
-    position: absolute;
-    bottom: 0;
-    width: 50px;
-    height: 80px;
-    background-color: red;
-    border-radius: 50%;
-    animation: rise 10s infinite ease-in-out;
-    opacity: 0.8;
-}
-
-/* Balloon rise animation */
-@keyframes rise {
-    from { transform: translateY(100%); opacity: 0.7; }
-    to { transform: translateY(-120%); opacity: 1; }
-}
-
-/* Different speeds and colors for balloons */
-.balloon:nth-child(odd) { background-color: #ffa500; animation-duration: 8s; }
-.balloon:nth-child(even) { background-color: #00bfff; animation-duration: 12s; }
-
-/* Style the Play button */
+/* Play button styling */
 button {
     padding: 15px 40px;
     background-color: #ff69b4;
@@ -115,8 +74,16 @@ button {
     margin-top: 30px;
 }
 
-/* Hover effect for button */
+/* Hover effect for the button */
 button:hover {
     background-color: #ff1493;
     transform: scale(1.05);
 }
+
+/* Pulse animation for emoji */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Balloon
