@@ -25,7 +25,20 @@ body {
     color: #ff007f;
     animation: blink 1s infinite alternate;
 }
-
+/* Body style: Use flexbox to center everything */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #f0f8ff, #ff69b4, #ff1493, #ffa500);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    overflow: hidden;
+    text-align: center; /* Ensure all text inside is centered */
+}
 /* Button styles */
 button {
     padding: 15px 30px;
