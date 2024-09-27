@@ -1,7 +1,6 @@
 // Play the birthday song
 document.getElementById('playSong').addEventListener('click', function() {
-    const audio = new Audio('happy-birthday-song.mp3'); // Replace with the correct path to your mp3 file
-    audio.play();
+    const audio = new Audio('Tim, no bugs today!.mp3');
 });
 
 // Create 35 balloons
