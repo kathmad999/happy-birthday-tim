@@ -1,31 +1,4 @@
-/* General body and container styles */
-body {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f8ff;
-    overflow: hidden;
-}
-
-.container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-/* Blinking effect for the birthday message */
-#birthdayMessage {
-    font-size: 1.5rem;
-    color: #ff007f;
-    animation: blink 1s infinite alternate;
-}
-/* Body style: Use flexbox to center everything */
+/* Body: Center all content vertically and horizontally */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -37,32 +10,62 @@ body {
     background-size: 400% 400%;
     animation: gradientShift 10s ease infinite;
     overflow: hidden;
-    text-align: center; /* Ensure all text inside is centered */
-}
-/* Button styles */
-button {
-    padding: 15px 30px;
-    background-color: #ff007f;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-    background-color: #e60073;
+/* Container: Center everything and add padding */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 800px;
 }
 
-/* Blinking animation */
-@keyframes blink {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
+/* Animated Gradient Background */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Dancing animation for the birthday message */
+#birthdayMessage {
+    font-size: 2rem;
+    color: #ff007f;
+    margin-bottom: 20px;
+    animation: dance 1.5s infinite ease-in-out;
+}
+
+/* Beautiful longer birthday wish text */
+#birthdayWish {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Pulse effect for emojis */
+#dancingEmoji {
+    font-size: 3rem;
+    animation: pulse 1.5s infinite;
+    margin-top: 20px;
+}
+
+/* Keyframe animation for dancing effect */
+@keyframes dance {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+/* Keyframe animation for pulsing effect */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 /* Balloon container */
@@ -75,6 +78,7 @@ button:hover {
     pointer-events: none;
 }
 
+/* Balloons: Create floating balloons with random speeds and colors */
 .balloon {
     position: absolute;
     bottom: 0;
@@ -83,30 +87,23 @@ button:hover {
     background-color: red;
     border-radius: 50%;
     animation: rise 10s infinite ease-in-out;
+    opacity: 0.8;
 }
 
-/* Rising balloons animation */
+/* Balloon rise animation */
 @keyframes rise {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(-100%);
-    }
+    from { transform: translateY(100%); opacity: 0.7; }
+    to { transform: translateY(-120%); opacity: 1; }
 }
 
-/* Alternating balloon colors */
-.balloon:nth-child(odd) {
-    background-color: #ffa500;
-}
+/* Different speeds and colors for balloons */
+.balloon:nth-child(odd) { background-color: #ffa500; animation-duration: 8s; }
+.balloon:nth-child(even) { background-color: #00bfff; animation-duration: 12s; }
 
-.balloon:nth-child(even) {
-    background-color: #00bfff;
-}
-/* Fancy button styling */
+/* Style the Play button */
 button {
     padding: 15px 40px;
-    background-color: #ff69b4; /* A nice bright pink */
+    background-color: #ff69b4;
     color: white;
     border: none;
     border-radius: 50px;
@@ -115,87 +112,11 @@ button {
     font-weight: bold;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    margin-top: 30px;
 }
 
+/* Hover effect for button */
 button:hover {
-    background-color: #ff1493; /* Darker pink on hover */
-    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+    background-color: #ff1493;
     transform: scale(1.05);
 }
-
-/* Adding a music note icon before the button text */
-button::before {
-    content: '🎶'; /* Music note */
-    position: absolute;
-    left: 15px;
-    font-size: 1.8rem;
-}
-
-/* Button ripple effect on click */
-button:active::before {
-    animation: ripple 0.6s linear;
-}
-
-/* Ripple animation */
-@keyframes ripple {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
-    to {
-        transform: scale(3);
-        opacity: 0;
-    }
-}
-/* Animated background with shifting gradient colors */
-body {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(45deg, #f0f8ff, #ff69b4, #ff1493, #ffa500);
-    background-size: 400% 400%;
-    animation: gradientShift 10s ease infinite;
-    overflow: hidden;
-}
-
-/* Gradient animation */
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-/* Pulse effect for the birthday message */
-#birthdayMessage {
-    font-size: 1.5rem;
-    color: #ff007f;
-    animation: pulse 2s infinite;
-}
-
-/* Pulse animation */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-/* Bounce effect for the birthday message */
-#birthdayMessage {
-    font-size: 1.5rem;
-    color: #ff007f;
-    animation: bounce 1.5s infinite;
-}
-
-/* Bounce animation */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
