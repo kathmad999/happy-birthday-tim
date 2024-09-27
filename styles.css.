@@ -1,36 +1,34 @@
+/* Body styles */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f8ff;
     margin: 0;
+    background-color: #f0f8ff;
     overflow: hidden;
-    background-image: url('https://example.com/background.jpg'); /* Optional: Replace with a festive background image URL */
-    background-size: cover;
 }
 
+/* Container styles */
 .container {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
-h1 {
-    font-size: 3rem;
-    color: #ff007f;
-    margin-bottom: 20px;
-}
-
-p {
+/* Blinking effect for the message */
+#birthdayMessage {
     font-size: 1.5rem;
-    color: #333;
+    color: #ff007f;
     margin-bottom: 30px;
+    animation: blink 1s infinite alternate;
 }
 
+/* Button styles */
 button {
     padding: 15px 30px;
     background-color: #ff007f;
@@ -47,37 +45,51 @@ button:hover {
     background-color: #e60073;
 }
 
-.animation {
-    margin-top: 20px;
+/* Blinking animation */
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
-/* Balloon animation */
+
+/* Balloon styles */
+.balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    bottom: 0;
+    width: 50px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in;
+}
+
+/* Balloon rise animation */
 @keyframes rise {
-    0% {
+    from {
         transform: translateY(100%);
     }
-    100% {
-        transform: translateY(-100vh);
+    to {
+        transform: translateY(-100%);
     }
 }
 
-.balloons {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 200px;
-    background-color: #ff007f;
-    border-radius: 50%;
-    animation: rise 4s infinite ease-in-out;
-    opacity: 0.8;
+/* Add multiple balloon colors */
+.balloon:nth-child(odd) {
+    background-color: #ffa500;
 }
 
-.balloons:nth-child(2) {
-    background-color: #ffa500;
-    animation-delay: 2s;
+.balloon:nth-child(even) {
+    background-color: #00bfff;
 }
-<div class="animation">
-    <div class="balloons"></div>
-    <div class="balloons"></div>
-</div>
